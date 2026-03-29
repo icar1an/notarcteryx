@@ -8,6 +8,8 @@
   --colour-red: #d32f2f;
   --colour-blue-focus: #5b9dd9;
 
+  --font-title: "SF Pro Display", "SF Pro", -apple-system, BlinkMacSystemFont, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
   --space-xxs: 0.25rem;
   --space-xs: 0.5rem;
   --space-s: 1rem;

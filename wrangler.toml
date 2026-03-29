@@ -1,7 +1,14 @@
 name = "notarcteryx"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
-pages_build_output_dir = ".open-next"
+main = ".open-next/worker.js"
+
+assets = { directory = ".open-next/assets", binding = "ASSETS" }
+
+routes = [
+  { pattern = "notarcteryx.com/*", zone_name = "notarcteryx.com" },
+  { pattern = "www.notarcteryx.com/*", zone_name = "notarcteryx.com" }
+]
 
 [vars]
 NEXT_PUBLIC_API_URL = "https://notarcteryx-api.onrender.com"

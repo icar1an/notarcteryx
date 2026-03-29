@@ -72,12 +72,12 @@ def _obscurity_score(popularity_ranks: list[int]) -> float:
     mean_rank = float(np.mean(ranks))
     std_rank = float(np.std(ranks))
 
-    # Ideal mean rank around 80-200 (knows some popular + some regional)
-    peak = lognorm.pdf(120, s=0.8, scale=120)
-    mean_score = float(lognorm.pdf(mean_rank, s=0.8, scale=120) / peak) if peak > 0 else 0.5
+    # Ideal mean rank around 120-300 (knows some popular + some regional)
+    peak = lognorm.pdf(200, s=0.8, scale=200)
+    mean_score = float(lognorm.pdf(mean_rank, s=0.8, scale=200) / peak) if peak > 0 else 0.5
 
-    # Variety bonus: std > 50 means a healthy mix
-    variety_score = min(1.0, std_rank / 80)
+    # Variety bonus: std > 80 means a healthy mix
+    variety_score = min(1.0, std_rank / 120)
 
     return float(np.clip(0.6 * mean_score + 0.4 * variety_score, 0.01, 0.99))
 

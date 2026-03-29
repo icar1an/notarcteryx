@@ -49,7 +49,7 @@ def test_obvious_faker():
     scorer = BayesianScorer(mountain_db)
     start = datetime.now(timezone.utc)
     answers = _make_answers(
-        ["Big Rock", "Tall Hill", "That One Mountain", "Uh Mountain Place", "Green Peak Thing"],
+        ["Xylophone", "Banana Sundae", "My Backyard", "Couch Potato", "Fluffy Clouds"],
         start,
         interval_seconds=25.0,  # slow = googling
     )
