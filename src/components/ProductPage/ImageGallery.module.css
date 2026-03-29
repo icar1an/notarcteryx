@@ -1,0 +1,43 @@
+.gallery {
+  padding-top: var(--space-s);
+}
+
+.heroWrap {
+  width: 100%;
+  aspect-ratio: 1350 / 1710;
+  overflow: hidden;
+  background: #f0ede8;
+  cursor: zoom-in;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gridImages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.gridItem {
+  aspect-ratio: 675 / 855;
+  overflow: hidden;
+  background: #f0ede8;
+  cursor: zoom-in;
+}
+
+.gridImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 992px) {
+  .gallery {
+    padding-top: 0;
+  }
+}

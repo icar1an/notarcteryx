@@ -1,0 +1,88 @@
+.sidebar {
+  position: sticky;
+  top: 120px;
+  align-self: flex-start;
+  padding-top: var(--space-m);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: var(--font-title);
+  font-size: var(--font-size-xl);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.reviewLink {
+  font-size: var(--font-size-s);
+  color: var(--colour-black);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.reviewLink:hover {
+  text-decoration: none;
+}
+
+.description {
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--colour-black);
+  margin-bottom: 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(--colour-grey-border);
+  margin: 1.25rem 0;
+}
+
+.notifyBtn,
+.addToCart {
+  width: 100%;
+  height: var(--button-height);
+  background: var(--colour-black);
+  color: var(--colour-white);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.notifyBtn:hover,
+.addToCart:hover {
+  transform: scale(1.0625);
+}
+
+.notifyBtn:active,
+.addToCart:active {
+  transform: scale(1.0208);
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    position: static;
+    padding-top: var(--space-s);
+  }
+}

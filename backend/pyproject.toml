@@ -1,0 +1,28 @@
+[project]
+name = "notarcteryx"
+version = "0.1.0"
+description = "Bayesian pricing backend for notarcteryx — prove you're a real hiker, get a discount"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.34",
+    "pydantic>=2.0",
+    "pydantic-settings>=2.0",
+    "numpy>=1.26",
+    "scipy>=1.12",
+    "rapidfuzz>=3.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "httpx>=0.27",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

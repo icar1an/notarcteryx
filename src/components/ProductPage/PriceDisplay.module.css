@@ -1,0 +1,60 @@
+.priceWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.price {
+  font-size: var(--font-size-m);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.skeleton {
+  display: inline-block;
+  width: 80px;
+  height: 1.125rem;
+  background: var(--colour-grey-background);
+  border-radius: 3px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.klarna {
+  font-size: var(--font-size-s);
+  color: var(--colour-black);
+  line-height: 1.5;
+}
+
+.klarnaLogo {
+  font-weight: 700;
+  font-style: italic;
+}
+
+.klarnaLink {
+  font-size: var(--font-size-s);
+  color: var(--colour-black);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-top: 0.125rem;
+}
+
+.klarnaLink:hover {
+  text-decoration: none;
+}
+
+.hiddenPrice {
+  font-weight: 500;
+  font-style: italic;
+  color: var(--colour-grey-inactive);
+}
+
+.surchargeNote {
+  font-size: var(--font-size-xs);
+  color: var(--colour-red);
+  font-weight: 500;
+}

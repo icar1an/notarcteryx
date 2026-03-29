@@ -1,0 +1,28 @@
+.productPage {
+  background: var(--colour-white);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--container-padding-mobile);
+  }
+}
