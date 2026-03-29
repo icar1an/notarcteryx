@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react';
 import styles from './FeatureIcons.module.css';
 
 interface Feature {
@@ -10,7 +11,7 @@ interface FeatureIconsProps {
   features: Feature[];
 }
 
-const iconMap: Record<string, JSX.Element> = {
+const iconMap: Record<string, ReactElement> = {
   'natural-fibre': (
     <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="#1A1A1A" strokeWidth="1.5">
       <path d="M24 44c0-11-8-16-8-24a8 8 0 1116 0c0 8-8 13-8 24z" />
