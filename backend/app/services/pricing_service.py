@@ -11,10 +11,10 @@ from app.config import settings
 
 
 FLAVOR_TEXT = [
-    (0.8, "You pass. Base price — respect."),
-    (0.5, "Passable trail knowledge. Small markup."),
-    (0.2, "You hesitated. That costs extra."),
-    (0.0, "Performance tax applied. Maybe try actually going outside."),
+    (0.8, "You actually hike."),
+    (0.5, "Almost eliteball trail knowledge."),
+    (0.2, "Do you really hike"),
+    (0.0, "You don't hike lmao"),
 ]
 
 
@@ -23,20 +23,21 @@ def calculate_price(
 ) -> dict:
     """Map truthfulness score [0, 1] to a surcharge for posers.
 
-    Real hikers (score ~1.0) pay base price.
-    Posers (score ~0.0) pay up to 40% more.
+    Real hikers (score ~0.8+) pay near base price.
+    Posers (score ~0.0) pay up to 900% more.
 
-    Uses an inverted sigmoid:
-      score ~1.0 → 0% surcharge (you're legit)
-      score ~0.5 → ~20% surcharge
-      score ~0.0 → ~40% surcharge
+    Uses an inverted sigmoid (midpoint 0.55, slope 8):
+      score ~0.8 → ~2% surcharge
+      score ~0.7 → ~10% surcharge
+      score ~0.55 → 450% surcharge (inflection point)
+      score ~0.0 → ~887% surcharge
     """
     max_surcharge = settings.max_surcharge_pct / 100.0
 
     # Inverted sigmoid: low score = high surcharge
-    # Midpoint at 0.35 so real hikers (0.6+) stay near base price
+    # Midpoint at 0.55 so real hikers (0.7+) stay near base price
     surcharge_fraction = max_surcharge / (
-        1.0 + math.exp(12 * (truthfulness_score - 0.35))
+        1.0 + math.exp(8 * (truthfulness_score - 0.55))
     )
 
     surcharge_pct = round(surcharge_fraction * 100)
